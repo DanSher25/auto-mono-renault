@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: "Renault Life Regular";
+  src: url("/fonts/RenaultLife-Regular.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "PF DIN Display Pro";
   src: url("/fonts/PFDINDisplayPro-Black.woff2") format("woff2");
   font-weight: 900;

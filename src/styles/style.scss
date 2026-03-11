@@ -4,6 +4,11 @@
 @use "./components/requestCall";
 @use "./components/form";
 @use "./components/model";
+@use "./components/contacts";
 @use "./components/sections/header";
 @use "./components/sections/hero";
 @use "./components/sections/catalog";
+@use "./components/sections/credit";
+@use "./components/sections/stock";
+@use "./components/sections/map";
+@use "./components/sections/footer";

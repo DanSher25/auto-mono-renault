@@ -1,0 +1,29 @@
+.contacts {
+  &__wrapper {
+    padding: 27px;
+    box-shadow: 0px 0px 44px 11px rgba(0, 0, 0, 0.13);
+    background-color: var(--grey-bg);
+  }
+  &__brand {
+    margin: 0 auto;
+    display: block;
+  }
+  &__info {
+    text-transform: uppercase;
+    font-family: "Proxima Nova Regular";
+    text-align: center;
+    margin-top: 10px;
+  }
+  &__address {
+    text-align: center;
+  }
+  &__form {
+    margin-top: 12px;
+  }
+  &__link {
+    color: var(--font-main);
+  }
+  &__input {
+    color: var(--font-main);
+  }
+}

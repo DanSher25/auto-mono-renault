@@ -1,0 +1,105 @@
+.credit {
+  &__wrapper {
+    margin-top: 50px;
+  }
+  &__title {
+    margin: 0 0 25px 0;
+    font-family: "Renault Life Bold";
+    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+  }
+  &__tabs-wrapper {
+    background-color: var(--grey-bg);
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__tabs {
+    display: flex;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__tab {
+    font-family: "Renault Life Bold";
+    padding: 0 13px;
+    height: 100%;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background: linear-gradient(90deg, #fbab18 0%, #f0c713 100%);
+    }
+    &.is-active {
+      background: linear-gradient(90deg, #fbab18 0%, #f0c713 100%);
+    }
+  }
+  &__content {
+    display: none;
+    &.is-active {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+  &__img {
+    width: 70%;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__card {
+    max-width: 322px;
+    padding: 35px 28px;
+    box-shadow: 0px 0px 44px 11px rgba(0, 0, 0, 0.13);
+    background-color: var(--grey-bg);
+    height: fit-content;
+  }
+  &__card-title {
+    font-size: 45px;
+    line-height: 50px;
+    font-family: "Renault Life Bold";
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fbab18 0%, rgb(239 208 31) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+  &__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+  }
+  &__card-item {
+    position: relative;
+    font-size: 0.85em;
+    line-height: 20px;
+    padding-left: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(90deg, #fbab18 0%, #f0c713 100%);
+      border-radius: 5px;
+    }
+  }
+  &__input {
+    color: var(--font-main);
+    font-weight: bold;
+  }
+  &__checkbox {
+    margin-top: 13px;
+  }
+  &__link {
+    color: var(--font-main);
+  }
+}

@@ -1,0 +1,116 @@
+.stock {
+  &__wrapper {
+    margin-top: 50px;
+  }
+  &__title {
+    margin: 0 0 25px 0;
+    font-family: "Renault Life Bold";
+    text-transform: uppercase;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+  }
+  &__filter {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  &__select.ss-main {
+    background-color: rgb(242, 242, 242);
+    color: var(--font-main);
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0px;
+      height: 100%;
+      background-color: var(--accent);
+      top: 0px;
+      left: 50%;
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        left: 0;
+        z-index: 1;
+      }
+    }
+    .ss-values,
+    .ss-arrow {
+      z-index: 2;
+    }
+  }
+  &__list {
+    margin-top: 32px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #fbab18 0%, #f0c713 100%);
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+  }
+  &__info-left {
+    height: fit-content;
+    align-self: center;
+  }
+  &__prices {
+    width: 255px;
+    height: 60px;
+    margin-bottom: 25px;
+    padding: 0 36px;
+    font-family: "PF DIN Display Pro Bold";
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 27px;
+    background-image: url("/images/gradient-small.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__price-old {
+    margin: 0 0 3px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(50, 50, 50, 1);
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
+    text-decoration: line-through;
+    display: inline-block;
+  }
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__credit {
+    text-align: center;
+    font-size: 31px;
+    line-height: 46px;
+  }
+  &__show-more {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,11 +1,13 @@
 import { Fancybox } from "@fancyapps/ui";
 import IMask from "imask";
 import FlipDown from "./vendor/flipDown.js";
+import SlimSelect from "slim-select";
 import Swiper from "swiper";
 import { Navigation, EffectFade, Pagination, Autoplay } from "swiper/modules";
 
 import "@fancyapps/ui/dist/fancybox.css";
 import "swiper/css";
+import "slim-select/styles";
 import "swiper/css/navigation";
 import "flipdown/dist/flipdown.css";
 import "swiper/css/effect-fade";
@@ -32,17 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const form = input.closest("form");
 
-      form.addEventListener("submit", (e) => {
-        if (!mask) return;
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          if (!mask) return;
 
-        if (mask.unmaskedValue.length !== 11) {
-          e.preventDefault();
-          input.setCustomValidity("Введите полный номер телефона");
-          input.reportValidity();
-        } else {
-          input.setCustomValidity("");
-        }
-      });
+          if (mask.unmaskedValue.length !== 11) {
+            e.preventDefault();
+            input.setCustomValidity("Введите полный номер телефона");
+            input.reportValidity();
+          } else {
+            input.setCustomValidity("");
+          }
+        });
+      }
     });
   };
 
@@ -131,7 +135,54 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  const initTabs = ({
+    containerSelector = "[data-tabs]",
+    triggerSelector = "[data-tab-trigger]",
+    contentSelector = "[data-tab-content]",
+    activeClass = "is-active",
+    defaultIndex = 0,
+  } = {}) => {
+    document.querySelectorAll(containerSelector).forEach((container) => {
+      const triggers = Array.from(container.querySelectorAll(triggerSelector)).filter((el) => el.closest(containerSelector) === container);
+
+      const contents = Array.from(container.querySelectorAll(contentSelector)).filter((el) => el.closest(containerSelector) === container);
+
+      if (!triggers.length || !contents.length) return;
+
+      setActive(defaultIndex);
+
+      triggers.forEach((trigger, index) => {
+        trigger.addEventListener("click", () => {
+          setActive(index);
+        });
+      });
+
+      function setActive(index) {
+        triggers.forEach((trigger, i) => {
+          trigger.classList.toggle(activeClass, i === index);
+        });
+
+        contents.forEach((content, i) => {
+          content.classList.toggle(activeClass, i === index);
+        });
+      }
+    });
+  };
+
+  const initFilters = () => {
+    document.querySelectorAll(".js-select").forEach((select) => {
+      new SlimSelect({
+        select: select,
+        settings: {
+          search: true,
+        },
+      });
+    });
+  };
+
   initPhoneMask();
   initFlipDown();
+  initTabs();
+  initFilters();
   // initHeroSlider();
 });
