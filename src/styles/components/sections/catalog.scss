@@ -1,0 +1,32 @@
+.catalog {
+  &__wrapper {
+    padding-top: 50px;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-family: "PF DIN Display Pro Bold";
+    font-size: 40px;
+    line-height: 50px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      width: 17px;
+      height: 100%;
+      background-color: var(--accent);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &__title-bottom {
+    background: linear-gradient(90deg, #fbab18 0%, rgb(239 208 31) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
