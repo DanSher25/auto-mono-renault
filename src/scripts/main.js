@@ -1,11 +1,13 @@
 import { Fancybox } from "@fancyapps/ui";
 import IMask from "imask";
+import FlipDown from "./vendor/flipDown.js";
 import Swiper from "swiper";
 import { Navigation, EffectFade, Pagination, Autoplay } from "swiper/modules";
 
 import "@fancyapps/ui/dist/fancybox.css";
 import "swiper/css";
 import "swiper/css/navigation";
+import "flipdown/dist/flipdown.css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
@@ -15,12 +17,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!inputs.length) return;
 
     inputs.forEach((input) => {
-      IMask(input, {
-        mask: "+{7} (000) 000-00-00",
-        lazy: false,
+      let mask = null;
+
+      input.addEventListener("mouseenter", () => {
+        if (mask) return;
+
+        mask = IMask(input, {
+          mask: "+{7} (000) 000-00-00",
+          lazy: false,
+        });
+
+        input.dataset.maskInit = "true";
       });
 
-      input.dataset.maskInit = "true";
+      const form = input.closest("form");
+
+      form.addEventListener("submit", (e) => {
+        if (!mask) return;
+
+        if (mask.unmaskedValue.length !== 11) {
+          e.preventDefault();
+          input.setCustomValidity("Введите полный номер телефона");
+          input.reportValidity();
+        } else {
+          input.setCustomValidity("");
+        }
+      });
     });
   };
 
@@ -86,6 +108,20 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
   // };
 
+  const initFlipDown = () => {
+    const el = document.getElementById("flipdown");
+
+    if (!el) return;
+
+    const endDate = new Date(el.dataset.end).getTime() / 1000;
+
+    const flipdown = new FlipDown(endDate, {
+      theme: "light",
+    });
+
+    flipdown.start();
+  };
+
   Fancybox.bind("[data-fancybox], [data-fancybox-trigger]", {
     autoFocus: false,
     on: {
@@ -96,5 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   initPhoneMask();
+  initFlipDown();
   // initHeroSlider();
 });

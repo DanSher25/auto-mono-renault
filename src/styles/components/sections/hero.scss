@@ -1,0 +1,49 @@
+.hero {
+  &__outer {
+    min-height: 900px;
+    background-image: url("/images/hero-bg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: stretch;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 7px;
+    height: 100%;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 40px;
+    font-size: 48px;
+    line-height: 54px;
+  }
+  &__bottom-title {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-family: "PF DIN Display Pro";
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 32px;
+  }
+  &__bottom-row {
+    display: flex;
+    gap: 24px;
+  }
+  &__info-item {
+    color: var(--white);
+    font-size: 20px;
+    line-height: 22px;
+  }
+  &__phone {
+    color: var(--accent);
+    &:hover {
+      color: var(--pale);
+    }
+  }
+}

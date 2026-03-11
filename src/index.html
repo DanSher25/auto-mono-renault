@@ -8,39 +8,99 @@
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
-    <header class="header"></header>
+    <header class="header">
+      <div class="header__fixed">
+        <div class="container">
+          <div class="header__wrapper">
+            <div class="header__left">
+              <div class="header__brand">
+                <img src="/images/brand.png" alt="" class="header__brand-img" />
+              </div>
+              <div class="header__info">
+                <div class="header__info-item">ДИЛЕРСКИЙ ЦЕНТР RENAULT</div>
+                <a href="tel:+74951261162" class="header__phone">+7 (495) 126-11-62</a>
+                <div class="header__info-item">МКАД, 33-Й КИЛОМЕТР, 170/1</div>
+              </div>
+            </div>
+
+            <div class="header__logo">
+              <img src="/images/logo.png" alt="" class="header__logo-img" />
+            </div>
+
+            <div class="header__credit-wrapper">
+              <a href="#request-call" data-fancybox class="header__credit btn btn-filled">ПОЛУЧИТЬ КРЕДИТ</a>
+            </div>
+            <div class="header__request-wrapper">
+              <a href="#request-call" data-fancybox class="header__request">
+                <img src="/images/call.png" alt="" class="header__request-img" />
+                <span>ЗАКАЗАТЬ ЗВОНОК</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main class="main">
-      <div class="main__wrapper">Финальные скидки при</div>
+      <div class="main__wrapper">
+        <section class="hero main__hero">
+          <div class="hero__outer">
+            <div class="container">
+              <div class="hero__wrapper">
+                <div class="hero__top">
+                  <h1 class="hero__title">
+                    Финальные скидки при <br />
+                    покупке в кредит до 70 000 ₽ !<br />
+                    Успейте до нового повышения утильсбора!
+                  </h1>
+                  <a hhref="#request-call" data-fancybox class="hero__btn btn btn-filled">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</a>
+                </div>
+                <div class="hero__bottom">
+                  <div class="hero__bottom-title">
+                    Торопитесь!<br />
+                    До конца акции осталось:
+                  </div>
+                  <div class="hero__bottom-row">
+                    <div id="flipdown" data-end="2026-04-02T12:35:00" class="hero__coundown flipdown"></div>
+                    <div class="hero__info">
+                      <div class="hero__info-item">Звоните <a href="tel:+74951261162" class="hero__phone">+7 (495) 126-11-62</a></div>
+                      <div class="hero__info-item">Успейте получить<br />специальные условия!</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="catalog">
+          <div class="catalog__wrapper"></div>
+        </section>
+      </div>
     </main>
 
     <footer class="footer"></footer>
 
     <div id="request-call" style="display: none">
       <form action="#" class="request-call form">
-        <!-- <div class="request-call__wrapper">
-          <h3 class="request-call__title">ЗАКАЗАТЬ ЗВОНОК</h3>
-          <div class="form__input-wrapper">
-            <label for="request-call-name" class="form__label">Имя<span class="red">*</span></label>
-            <input type="text" class="form__input" name="name" required id="request-call-name" />
-          </div>
-          <div class="form__input-wrapper">
-            <label for="request-call-tel" class="form__label">Телефон<span class="red">*</span></label>
-            <input type="tel" class="form__input" name="phone" required id="request-call-tel" />
-          </div>
-          <div class="form__checkbox">
-            <input type="checkbox" class="form__checkbox-input" required id="request-call-checkbox" />
-            <label for="request-call-checkbox" class="form__checkbox-label"
-              >Согласие на <a href="/">обработку персональных данных</a> и на
-              <a href="">предоставление персональных данных третьим лицам<span class="red">*</span></a>
+        <div class="request-call__wrapper">
+          <div class="form__wrapper request-call__form">
+            <div class="form__input-wrapper">
+              <input type="text" class="form__input" name="name" required id="request-call-name" placeholder="ВАШЕ ИМЯ" />
+            </div>
+            <div class="form__input-wrapper">
+              <input type="tel" class="form__input" name="phone" required id="request-call-tel" placeholder="ВАШ ТЕЛЕФОН*" />
+            </div>
+            <label class="form__checkbox" for="request-call-checkbox">
+              <input type="checkbox" class="form__checkbox-input" required id="request-call-checkbox" />
+              <div class="form__checkbox-input-custom"></div>
+              <span for="request-call-checkbox" class="form__checkbox-label">
+                Нажимая кнопку, Вы даете согласие на <br />
+                обработку своих <a href="/" class="form__link"> персональных данных </a>
+              </span>
             </label>
+            <button type="submit" class="form__submit btn btn-filled">РАССЧИТАТЬ КРЕДИТ</button>
           </div>
-          <button type="submit" class="form__submit">ПЕРЕЗВОНИТЕ МНЕ</button>
-          <div class="form__policy">
-            Эта страница защищена сервисом Yandex SmartCaptcha и подпадает под <a href="/">Политику конфиденциальности</a> и
-            <a href="/">Условия использования Yandex</a>
-          </div>
-        </div> -->
+        </div>
       </form>
     </div>
 

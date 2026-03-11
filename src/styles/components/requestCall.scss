@@ -1,0 +1,15 @@
+.request-call {
+  &__wrapper {
+    width: 600px;
+    height: 500px;
+    background-image: url("/images/modal-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    padding-top: 48px;
+  }
+  &__form {
+    margin: 0 auto;
+  }
+}
