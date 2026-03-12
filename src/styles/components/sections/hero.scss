@@ -7,6 +7,13 @@
     background-position: center;
     display: flex;
     align-items: stretch;
+    @media (max-width: 992px) {
+      min-height: 700px;
+    }
+    @media (max-width: 768px) {
+      min-height: 475px;
+      background-image: url("/images/hero-bg-mobile.webp");
+    }
   }
   &__wrapper {
     display: flex;
@@ -15,6 +22,12 @@
     padding-top: 100px;
     padding-bottom: 7px;
     height: 100%;
+    @media (max-width: 992px) {
+      padding-top: 75px;
+    }
+    @media (max-width: 768px) {
+      padding-top: 50px;
+    }
   }
   &__title {
     text-transform: uppercase;
@@ -22,6 +35,16 @@
     margin-bottom: 40px;
     font-size: 48px;
     line-height: 54px;
+    @media (max-width: 1200px) {
+      font-size: 38px;
+      line-height: 44px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
   }
   &__bottom-title {
     color: var(--white);
@@ -35,6 +58,25 @@
     display: flex;
     gap: 24px;
   }
+  &__info {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+  &__coundown {
+    @media (max-width: 992px) {
+      width: 100% !important;
+    }
+    @media (max-width: 420px) {
+      .rotor-group {
+        padding-right: 10px !important;
+      }
+      .rotor-group:nth-child(n + 2):nth-child(-n + 3):before,
+      .rotor-group:nth-child(n + 2):nth-child(-n + 3):after {
+        left: 66px !important;
+      }
+    }
+  }
   &__info-item {
     color: var(--white);
     font-size: 20px;
@@ -44,6 +86,11 @@
     color: var(--accent);
     &:hover {
       color: var(--pale);
+    }
+  }
+  &__btn {
+    @media (max-width: 768px) {
+      margin: 0 auto;
     }
   }
 }

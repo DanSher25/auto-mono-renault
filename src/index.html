@@ -37,8 +37,50 @@
               </a>
             </div>
           </div>
+          <div class="header__mobile mobile-header">
+            <div class="mobile-header__wrapper">
+              <div class="mobile-header__top">
+                <div class="mobile-header__brand">
+                  <img src="/images/brand-mobile.png" alt="" class="mobile-header__brand-img" />
+                  <div class="mobile-header__title">Дилерский центр Renault</div>
+                </div>
+                <div class="mobile-header__logo">
+                  <img src="/images/logo.png" alt="" class="mobile-header__logo-img" />
+                </div>
+                <div class="mobile-header__burger">
+                  <span></span>
+                </div>
+              </div>
+              <div class="mobile-header__bottom">
+                <div class="mobile-header__phone-wrapper">
+                  <a href="tel:+74951261162" class="mobile-header__phone">+7 (495) 126-11-62</a>
+                </div>
+                <a href="#request-call" data-fancybox class="mobile-header__modal btn btn-filled">ЗАКАЗАТЬ ЗВОНОК</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="header__mobile-menu mobile-menu">
+        <div class="mobile-menu__wrapper">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="#catalog" class="mobile-menu__link">Модельный ряд</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#credit" class="mobile-menu__link">Кредит</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#cars" class="mobile-menu__link">Автомобили в наличии</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="#contacts" class="mobile-menu__link">Контакты</a>
+            </li>
+          </ul>
+          <div class="mobile-menu__address">МКАД, 33-й километр, 170/1</div>
+        </div>
+      </div>
+      <div class="mobile-menu-overlay"></div>
     </header>
 
     <main class="main">
@@ -72,15 +114,19 @@
             </div>
           </div>
         </section>
-        <section class="catalog">
+        <section class="catalog" id="catalog">
           <div class="catalog__wrapper">
-            <h2 class="catalog__title container">
-              <div class="catalog__title-top">Автомобили в кредит на лучших условиях на рынке</div>
-              <div class="catalog__title-bottom">Предложение ограничено</div>
-            </h2>
+            <div class="container">
+              <h2 class="catalog__title">
+                <div class="catalog__title-top">Автомобили в кредит на лучших условиях на рынке</div>
+                <div class="catalog__title-bottom">Предложение ограничено</div>
+              </h2>
+            </div>
+
             <ul class="catalog__list">
               <li class="catalog__model model">
                 <div class="model__wrapper">
+                  <div class="model__title-mobile">Duster</div>
                   <div class="model__gradient-wrapper">
                     <div class="model__gradient">
                       <div class="model__gradient-text">Duster</div>
@@ -111,6 +157,7 @@
               </li>
               <li class="catalog__model model model-revert">
                 <div class="model__wrapper">
+                  <div class="model__title-mobile">Arkanas</div>
                   <div class="model__gradient-wrapper">
                     <div class="model__gradient">
                       <div class="model__gradient-text">Arkana</div>
@@ -141,6 +188,7 @@
               </li>
               <li class="catalog__model model">
                 <div class="model__wrapper">
+                  <div class="model__title-mobile">Duster</div>
                   <div class="model__gradient-wrapper">
                     <div class="model__gradient">
                       <div class="model__gradient-text">Duster</div>
@@ -171,6 +219,7 @@
               </li>
               <li class="catalog__model model model-revert">
                 <div class="model__wrapper">
+                  <div class="model__title-mobile">Arkanas</div>
                   <div class="model__gradient-wrapper">
                     <div class="model__gradient">
                       <div class="model__gradient-text">Arkana</div>
@@ -202,18 +251,23 @@
             </ul>
           </div>
         </section>
-        <section class="credit" data-tabs>
+
+        <section class="credit" data-tabs id="credit">
           <div class="credit__wrapper">
             <h2 class="credit__title">Получите кредит за 5 минут</h2>
             <div class="credit__tabs-wrapper">
-              <div class="credit__tabs container">
-                <div class="credit__tab" data-tab-trigger>Duster</div>
-                <div class="credit__tab" data-tab-trigger>Arkana</div>
-                <div class="credit__tab" data-tab-trigger>Logan</div>
-                <div class="credit__tab" data-tab-trigger>Logan Stepway</div>
-                <div class="credit__tab" data-tab-trigger>Sandero</div>
-                <div class="credit__tab" data-tab-trigger>Sandero Stepway</div>
-                <div class="credit__tab" data-tab-trigger>Kaptur</div>
+              <div class="container">
+                <div class="credit__tabs">
+                  <div class="swiper-wrapper">
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Duster</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Arkana</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Logan</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Logan Stepway</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Sandero</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Sandero Stepway</div>
+                    <div class="credit__tab swiper-slide" data-tab-trigger>Kaptur</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -412,7 +466,8 @@
             </div>
           </div>
         </section>
-        <section class="stock">
+
+        <section class="stock" id="cars">
           <div class="container">
             <div class="stock__wrapper">
               <h2 class="stock__title">Автомобили в наличии</h2>
@@ -502,11 +557,10 @@
             </div>
           </div>
         </section>
-        <section class="map">
+
+        <section class="map" id="contacts">
           <div class="map__outer">
             <div class="map__wrapper">
-              <iframe src="https://yandex.ru/map-widget/v1/?ll=37.609434%2C55.613786&z=14" width="600" height="500" frameborder="0" allowfullscreen="true">
-              </iframe>
               <div class="map__contacts contacts">
                 <div class="contacts__wrapper">
                   <img src="/images/brand.png" alt="" class="contacts__brand" />
@@ -531,6 +585,8 @@
                   </form>
                 </div>
               </div>
+              <iframe src="https://yandex.ru/map-widget/v1/?ll=37.609434%2C55.613786&z=14" width="600" height="500" frameborder="0" allowfullscreen="true">
+              </iframe>
             </div>
           </div>
         </section>

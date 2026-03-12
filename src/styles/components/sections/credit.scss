@@ -9,11 +9,20 @@
     font-size: 45px;
     line-height: 50px;
     text-align: center;
+    @media (max-width: 1200px) {
+      font-size: 40px;
+      line-height: 45px;
+    }
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
   }
   &__tabs-wrapper {
     background-color: var(--grey-bg);
     width: 100%;
     margin-bottom: 20px;
+    overflow: hidden;
   }
   &__tabs {
     display: flex;
@@ -31,9 +40,10 @@
     text-align: center;
     transition: all 0.3s ease;
     height: 100%;
-    display: flex;
+    display: flex !important;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
     &:hover {
       background: linear-gradient(90deg, #fbab18 0%, #f0c713 100%);
     }
@@ -43,16 +53,24 @@
   }
   &__content {
     display: none;
+
     &.is-active {
       display: flex;
       justify-content: space-between;
       gap: 20px;
+      flex-wrap: wrap;
     }
   }
   &__img {
-    width: 70%;
-    object-fit: cover;
+    width: calc(70% - 10px);
+    object-fit: contain;
     object-position: center;
+    @media (max-width: 900px) {
+      width: calc(60% - 10px);
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   &__card {
     max-width: 322px;
@@ -60,6 +78,14 @@
     box-shadow: 0px 0px 44px 11px rgba(0, 0, 0, 0.13);
     background-color: var(--grey-bg);
     height: fit-content;
+    width: calc(30% - 10px);
+    @media (max-width: 900px) {
+      width: calc(40% - 10px);
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
   &__card-title {
     font-size: 45px;
